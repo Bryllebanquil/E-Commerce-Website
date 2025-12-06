@@ -23,7 +23,7 @@ $stmt->execute();
 $stmt->store_result();
 
 if ($stmt->num_rows === 0) {
-    echo "Invalid credentials.";
+    header('Location: login.html?error=invalid');
     $stmt->close();
     exit;
 }
@@ -40,7 +40,7 @@ if (password_verify($password, $hashed_password)) {
     header('Location: dashboard.php');
     exit;
 } else {
-    echo "Invalid credentials.";
+    header('Location: login.html?error=invalid');
     exit;
 }
 ?>

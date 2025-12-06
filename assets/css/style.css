@@ -19,7 +19,7 @@
   /**
    * colors
    */
-
+  scroll-behavior: smooth;
   --spanish-gray: hsl(0, 0%, 60%);
   --sonic-silver: hsl(0, 0%, 47%);
   --eerie-black: hsl(0, 0%, 13%);
@@ -78,6 +78,7 @@
 \*-----------------------------------*/
 
 *, *::before, *::after {
+  scroll-behavior: smooth;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -519,6 +520,7 @@ body::-webkit-scrollbar-thumb:hover { background: hsl(0, 0%, 70%); }
   box-shadow: 0 0 10px hsla(0, 0%, 0%, 0.1);
   overflow-y: scroll;
   overscroll-behavior: contain;
+  scroll-behavior: smooth;
   visibility: hidden;
   transition: 0.5s ease;
   z-index: 20;
@@ -661,6 +663,7 @@ body::-webkit-scrollbar-thumb:hover { background: hsl(0, 0%, 70%); }
   overflow: auto hidden;
   scroll-snap-type: inline mandatory;
   overscroll-behavior-inline: contain;
+  scroll-behavior: smooth;
 }
 
 .slider-item {
@@ -740,6 +743,7 @@ body::-webkit-scrollbar-thumb:hover { background: hsl(0, 0%, 70%); }
   overflow: auto hidden;
   scroll-snap-type: inline mandatory;
   overscroll-behavior-inline: contain;
+  scroll-behavior: smooth;
 }
 
 .category-item {
@@ -807,6 +811,7 @@ body::-webkit-scrollbar-thumb:hover { background: hsl(0, 0%, 70%); }
   padding: 30px;
   overflow-y: scroll;
   overscroll-behavior: contain;
+  scroll-behavior: smooth;
   visibility: hidden;
   transition: 0.5s ease;
   z-index: 20;
@@ -980,6 +985,7 @@ body::-webkit-scrollbar-thumb:hover { background: hsl(0, 0%, 70%); }
   overflow-x: auto;
   overscroll-behavior-inline: contain;
   scroll-snap-type: inline mandatory;
+  scroll-behavior: smooth;
 }
 
 .product-minimal .showcase-container {
@@ -1057,6 +1063,7 @@ body::-webkit-scrollbar-thumb:hover { background: hsl(0, 0%, 70%); }
   overflow-x: auto;
   overscroll-behavior-inline: contain;
   scroll-snap-type: inline mandatory;
+  scroll-behavior: smooth;
 }
 
 .product-featured .showcase-container {
@@ -1527,6 +1534,7 @@ body::-webkit-scrollbar-thumb:hover { background: hsl(0, 0%, 70%); }
   overflow-x: auto;
   overscroll-behavior-inline: contain;
   scroll-snap-type: inline mandatory;
+  scroll-behavior: smooth;
 }
 
 .blog-card {
@@ -2395,6 +2403,7 @@ footer {
     visibility: visible;
     overflow-y: auto;
     overscroll-behavior: auto;
+    scroll-behavior: smooth;
     z-index: 0;
   }
 

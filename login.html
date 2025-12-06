@@ -4,83 +4,88 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login - Ecommerce - Website</title>
+  <title>Login - Ecommerce Website</title>
   <link rel="stylesheet" href="./assets/css/style-prefix.css">
   <link rel="stylesheet" href="./assets/css/login.css">
 </head>
+
 <body>
-  <!-- Login Container -->
   <main class="login-main">
     <div class="login-container">
-      <!-- Left Section - Brand Info -->
+
+      <!-- LEFT SIDE BEAUTIFIED TEXT -->
       <div class="login-brand">
         <div class="brand-content">
           <h1 class="brand-title">Welcome Back</h1>
-          <p class="brand-text">Discover amazing products and exclusive deals</p>
-          <p class="brand-text">Don't have an account? <a href="register.html" class="brand-link">Sign up here</a></p>
+
+          <p class="brand-text">
+            Explore amazing products, discover exclusive deals,  
+            and enjoy a shopping experience designed just for you.
+          </p>
+
+          <p class="brand-text">
+            Don’t have an account?
+            <a href="register.html" class="brand-link">Sign up here</a>
+          </p>
         </div>
       </div>
 
-      <!-- Right Section - Login Form -->
+      <!-- RIGHT SIDE FORM -->
       <div class="login-form-wrapper">
+
+        <!-- Error -->
+        <div id="login-error" class="form-error" style="display:none;color:red;margin-bottom:10px;">
+          Invalid credentials. Please try again.
+        </div>
+
         <form class="login-form" id="loginForm" method="POST" action="login.php">
-          <h2 class="form-title">Sign In</h2>
           
-          <!-- Username Input -->
+          <h2 class="form-title">Sign In</h2>
+
           <div class="form-group">
             <label for="username" class="form-label">Username</label>
             <input type="text" id="username" name="username" placeholder="Enter your username" required>
-
-            <span class="form-error" id="emailError"></span>
           </div>
 
-          <!-- Password Input -->
           <div class="form-group">
             <label for="password" class="form-label">Password</label>
-            <input type="password" id="password" name="password" class="form-input" placeholder="Enter your password" required>
-            <span class="form-error" id="passwordError"></span>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required>
           </div>
 
-          <!-- Remember Me & Forgot Password -->
           <div class="form-options">
             <label class="remember-me">
-              <input type="checkbox" name="remember" id="remember">
+              <input type="checkbox" id="remember" name="remember">
               <span>Remember me</span>
             </label>
             <a href="#" class="forgot-password">Forgot password?</a>
           </div>
 
-          <!-- Submit Button -->
           <button type="submit" class="btn-login">Sign In</button>
 
-          <!-- Divider -->
-          <div class="form-divider">
-            <span>Or continue with</span>
-          </div>
+          <div class="form-divider"><span>Or continue with</span></div>
 
-          <!-- Social Login -->
           <div class="social-login">
-            <button type="button" class="social-btn google-btn" id="googleLogin">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <path d="M10 0C4.477 0 0 4.477 0 10s4.477 10 10 10 10-4.477 10-10S15.523 0 10 0z" fill="#fff"/>
-              </svg>
-              Google
-            </button>
-            <button type="button" class="social-btn facebook-btn" id="facebookLogin">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <path d="M10 0C4.477 0 0 4.477 0 10s4.477 10 10 10 10-4.477 10-10S15.523 0 10 0z" fill="#fff"/>
-              </svg>
-              Facebook
-            </button>
+            <button type="button" class="social-btn google-btn">Google</button>
+            <button type="button" class="social-btn facebook-btn">Facebook</button>
           </div>
 
-          <!-- Sign Up Link -->
-          <p class="signup-text">Don't have an account? <a href="register.html">Create one</a></p>
+          <p class="signup-text">
+            Don’t have an account?  
+            <a href="register.html">Create one</a>
+          </p>
+
         </form>
       </div>
+
     </div>
   </main>
 
   <script src="./assets/js/script.js"></script>
+
+  <script>
+    if (window.location.search.includes('error=invalid')) {
+      document.getElementById('login-error').style.display = '';
+    }
+  </script>
 </body>
 </html>
