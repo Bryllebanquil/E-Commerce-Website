@@ -101,6 +101,7 @@ span { display: inline-block; }
 html {
   font-family: "Poppins", sans-serif;
   overscroll-behavior: contain;
+  scroll-behavior: smooth;
 }
 
 input {
@@ -2646,4 +2647,117 @@ nav ul{
   font-weight:500;
   text-decoration:none;
   list-style:none;
+}
+
+/* User Menu Dropdown styles */
+.header-user-actions {
+  position: relative;
+}
+/* Updated User Menu Dropdown styles for modern look */
+.user-menu-dropdown {
+  display: none;
+  position: absolute;
+  top: 48px;
+  right: 0;
+  min-width: 220px;
+  background: #fff;
+  box-shadow: 0 6px 28px rgba(0,0,0,0.13);
+  border-radius: 16px;
+  overflow: hidden;
+  z-index: 100;
+  padding: 8px 0 0 0;
+  border: none;
+  font-family: 'Poppins', sans-serif;
+}
+.user-menu-link {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  padding: 16px 28px 12px 24px;
+  color: #272D36;
+  font-size: 1.15rem;
+  font-weight: 400;
+  background: none;
+  border: none;
+  outline: none;
+  border-radius: 0;
+  transition: background 0.12s;
+}
+.user-menu-link span {
+  display: block;
+  line-height: 1.2;
+}
+.user-menu-link ion-icon {
+  font-size: 1.35em;
+  min-width: 22px;
+  color: #747b8a;
+}
+.user-menu-link:hover {
+  background: #fafbfc;
+  color: var(--salmon-blue, #1963e6);
+}
+.user-menu-link + .user-menu-link {
+  border-top: 1px solid #f0f1f3;
+  padding-top: 16px;
+}
+.user-menu-link:last-child {
+  color: #ec4040;
+  font-weight: 500;
+  border-radius: 0 0 16px 16px;
+  padding-bottom: 20px;
+  padding-top: 16px;
+  margin-top: 0px;
+}
+.user-menu-link:last-child:hover {
+  background: #fef1f1;
+  color: #e22424;
+}
+.user-menu-btn:hover + .user-menu-dropdown,
+.user-menu-dropdown:hover {
+  display: block;
+}
+
+/* Align dropdown card shadow/look more with screenshot */
+.user-menu-dropdown {
+  box-shadow: 0 12px 32px 0 rgba(31, 62, 135, 0.10), 0 1.5px 8px 0 rgba(80,94,125,0.07);
+}
+@media (max-width: 1023px) {
+  .user-menu-dropdown {
+    right: auto;
+    left: 0;
+    min-width: 150px;
+    top: 48px;
+  }
+}
+
+/* Header User Actions Hover Effects: icon color changes and slight upward motion */
+.header-user-actions .action-btn ion-icon {
+  transition: color 0.18s, transform 0.18s;
+  color: #272D36;
+}
+.header-user-actions .action-btn {
+  transition: transform 0.18s;
+  color: #e22424;
+}
+/* Person icon: blue hover */
+.header-user-actions .action-btn.user-menu-btn:hover ion-icon {
+  color: #1963e6;
+  transform: translateY(-2px);
+}
+.header-user-actions .action-btn.user-menu-btn:hover {
+  transform: translateY(-2px);
+}
+/* Heart & Bag icons: orange hover */
+.header-user-actions .action-btn:not(.user-menu-btn):hover ion-icon[name="heart-outline"],
+.header-user-actions .action-btn:not(.user-menu-btn):hover ion-icon[name="bag-handle-outline"] {
+  color: #FF7000;
+  transform: translateY(-2px);
+}
+.header-user-actions .action-btn:not(.user-menu-btn):hover {
+  transform: translateY(-2px);
+}
+/* Also animate the badge if present */
+.header-user-actions .action-btn:hover .count {
+  transform: translateY(-2px);
+  transition: transform 0.18s;
 }

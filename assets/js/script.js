@@ -158,3 +158,12 @@ function ChangeImage(img) {
       mainOldPrice.textContent = cardOldPrice.textContent;
     }
   }
+
+
+
+  function scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }
