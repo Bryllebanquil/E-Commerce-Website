@@ -157,7 +157,7 @@
 }
 
 #login-error {
-  color: var(--salmon-blue);
+  color: #e74c3c;
   display: flex;
   justify-content: center;
   align-items: center;

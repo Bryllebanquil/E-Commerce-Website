@@ -1,16 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="smooth-scroll">
 
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>E-Commerce Website</title>
-
-  <!--
-    - favicon
-  -->
-  <link rel="shortcut icon" href="./assets/images/logo/logo.ico" type="image/x-icon">
 
   <!--
     - custom css link
@@ -158,9 +153,15 @@
 
         <div class="header-user-actions">
 
-          <button class="action-btn">
-            <ion-icon name="person-outline"></ion-icon>
-          </button>
+          <div class="profile-wrapper">
+            <button class="action-btn user-menu-btn">
+              <ion-icon name="person-outline"></ion-icon>
+            </button>
+            <div class="popup-menu">
+              <a href="account-settings.html">Account Settings</a>
+              <a href="logout.php">Logout</a>
+            </div>
+          </div>
 
           <button class="action-btn">
             <ion-icon name="heart-outline"></ion-icon>

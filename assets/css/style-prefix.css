@@ -104,6 +104,7 @@ html {
   -ms-scroll-chaining: none;
       overscroll-behavior: contain;
 }
+html.smooth-scroll { scroll-behavior: smooth; }
 
 input {
   display: block;
@@ -2713,6 +2714,30 @@ footer {
             border-radius: 20px;
   }
 
+  .header-user-actions .action-btn ion-icon {
+    transition: color 0.18s, transform 0.18s;
+  }
+
+  .header-user-actions .action-btn:hover {
+    transform: translateY(-2px);
+  }
+
+  .header-user-actions .action-btn.user-menu-btn:hover ion-icon {
+    color: var(--salmon-blue);
+    transform: translateY(-2px);
+  }
+
+  .header-user-actions .action-btn:not(.user-menu-btn):hover ion-icon[name="heart-outline"],
+  .header-user-actions .action-btn:not(.user-menu-btn):hover ion-icon[name="bag-handle-outline"] {
+    color: #FF7000;
+    transform: translateY(-2px);
+  }
+
+  .header-user-actions .action-btn:hover .count {
+    transform: translateY(-2px);
+    transition: transform 0.18s;
+  }
+
   .desktop-navigation-menu { display: block; }
 
   .desktop-menu-category-list {
@@ -2986,7 +3011,7 @@ footer {
 
   .product-featured .countdown-content { padding: 5px 10px; }
 
-  .product-grid { -ms-grid-columns: (1fr)[3]; grid-template-columns: repeat(3, 1fr); }
+  .product-grid { -ms-grid-columns: 1fr 1fr 1fr; grid-template-columns: repeat(3, 1fr); }
 
 
 
@@ -3114,7 +3139,7 @@ footer {
 
   .product-featured .display-number { --fs-5: 1.125rem; }
 
-  .product-grid { -ms-grid-columns: (1fr)[4]; grid-template-columns: repeat(4, 1fr); }
+  .product-grid { -ms-grid-columns: 1fr 1fr 1fr 1fr; grid-template-columns: repeat(4, 1fr); }
 
 
 
@@ -3274,3 +3299,61 @@ footer {
   text-decoration: none;
   display: block;
 }
+
+/* User profile hover menu */
+.profile-wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-wrapper .popup-menu {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  min-width: 170px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.13);
+  border: none;
+  padding: 8px 0;
+  display: none;
+  flex-direction: column;
+  z-index: 20;
+}
+
+.profile-wrapper .popup-menu a {
+  display: block;
+  padding: 13px 18px;
+  color: #222;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.16s, color 0.16s;
+}
+
+.profile-wrapper .popup-menu a:not(:last-child) {
+  border-bottom: 1px solid #f2f3f5;
+}
+
+.profile-wrapper .popup-menu a:hover {
+  background: #f5f6fa;
+  color: var(--salmon-blue);
+}
+
+.profile-wrapper .popup-menu a:last-child {
+  color: #ec4040;
+  font-weight: 500;
+}
+
+.profile-wrapper .popup-menu a:last-child:hover {
+  background: #fef1f1;
+  color: #e22424;
+}
+
+.profile-wrapper:hover .popup-menu {
+  display: flex;
+}
+
+/* Remove previous popup-item/item-title/item-desc customizations if present */
